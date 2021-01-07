@@ -1,0 +1,154 @@
+html {
+  	height: 100%;
+}
+
+body{
+	font-family: "Roboto", sans-serif;
+	min-height: 100%;
+  	margin: 0;
+  	padding: 0;
+  	position: relative;
+}
+
+a:link{
+text-decoration:none;
+}
+
+a{
+	color: white;
+}
+
+header{}
+
+#header1{
+	height: 39px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cl-1-3{
+	width: 150px;
+}
+
+#headerLogin{
+	color: black;
+}
+
+#headerConnect{
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#headerSignin{
+	color: black;
+}
+
+#logo{
+	color: black;
+	font-size: 24px;
+	font-family: "Storybook", sans-serif;
+}
+
+.aWhite{
+	color: white;
+}
+
+.aBlack{
+	color: black;
+}
+
+#header2{
+	padding-right: 600px;
+	padding-left: 575px;
+	height: 34px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+footer{
+	position: absolute; 
+	bottom: 0px;
+	left: 0; 
+	right: 0;
+}
+
+#footer2{
+	height: 351px;
+	background-color: black;
+	padding-right: 345px;
+	padding-left: 345px;
+	color: white;
+}
+
+.lineTextFooter2{
+	display: flex;
+	align-items: flex-end;
+}
+
+#logoTextFooter2{
+	font-family: "Storybook", sans-serif;
+	color: white;
+	font-size: 40px;
+  	-webkit-text-fill-color: black;
+  	-webkit-text-stroke-width: 1.5px;
+  	-webkit-text-stroke-color: white;
+}
+
+#behindTextFooter2{
+	font-family: "Roboto", sans-serif;
+	color: white;
+	font-size: 36px;
+  	-webkit-text-fill-color: black;
+  	-webkit-text-stroke-width: 1.5px;
+  	-webkit-text-stroke-color: white;
+  	font-weight: 600;
+}
+
+.normalTextFooter2{
+	font-size: 34px;
+}
+
+#shareFooter2{
+	width: 336px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#headFooter2{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 80px;
+	padding-bottom: 135px;
+}
+
+#navFooter{
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+#footer1{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 39px;
+	padding-right: 345px;
+	padding-left: 345px;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+#footer1Right{
+	display: flex;
+}
+
+#logoFooter{
+	font-family: "Storybook", sans-serif;
+}
+

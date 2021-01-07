@@ -1,0 +1,210 @@
+html {
+  	height: 100%;
+}
+
+*{
+	margin: 0;
+  	padding: 0;
+  	letter-spacing: 1px;
+}
+
+body{
+	font-family: "Roboto", sans-serif;
+	min-height: 100%;
+  	margin: 0;
+  	padding: 0;
+  	position: relative;
+  	background-image: url(../img/loginSignIn.jpg);
+  	background-size:cover;
+}
+
+@font-face {
+    font-family: "Storybook";
+    src: url("../fonts/Storybook.ttf");
+}
+
+a:link{
+text-decoration:none;
+}
+
+a{
+	color:black;
+}
+
+#logoLoginSignIn{
+	color: white;
+	font-size: 48px;
+	font-family: "Storybook", sans-serif;
+	padding-left: 100px;
+	padding-top: 80px;
+	letter-spacing: 0px;
+	z-index: 1;
+}
+
+#SigninContainter{
+	width: 800px;
+	padding-right:40px;
+	padding-left:40px;  
+	padding-top:60px; 
+	padding-bottom:60px;
+	border-radius: 5px;
+	background-color: white;
+	color: black;
+	margin: auto;
+}
+
+#loginContent{
+	margin-top: 60px;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#titleLoginSignIn{
+	font-weight:500; 
+	font-size:36px;
+}
+
+label{
+	font-size: 16px;
+	font-weight: 450;
+}
+
+.valideButton{
+	width: 100%;
+	height: 41px;
+	background-color: #BB6060;
+	color:white;
+	font-size: 18px;
+	text-align: center;
+	align-items: center;
+	box-sizing: border-box;
+	border: 2.4px solid #BB6060;
+}
+
+
+.input{
+	height: 34px;
+	width: 100%;
+	font-size: 18px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	margin-bottom: 30px;
+}
+
+.l-input{
+	width: 100%;
+	display: flex;
+	justify-content:space-between;
+	flex-wrap: wrap-reverse;
+}
+
+#link{
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.labelInput-3{
+	width: 31.5%;
+	display: flex;
+	flex-direction: column;
+}
+
+.labelInput-2{
+	width: 48.5%;
+	display: flex;
+	flex-direction: column;
+}
+
+.CGU {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.CGU input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  box-sizing: border-box;
+border: 2px solid black;
+}
+
+.CGU:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.CGU input:checked ~ .checkmark {
+  background-color: #BB6060;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.CGU input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.CGU .checkmark:after {
+  left: 4px;
+  top: 0,5px;
+  width: 1px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.buttonSquare{	
+	width: 60px;
+	height: 60px;
+	background-color: #FFB6C100;
+	font-size: 18px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	border-bottom: 0px;
+	align-items: center;
+}
+
+
+.inputCaptcha{
+	height: 34px;
+	width: 290px;
+	font-size: 18px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	margin-bottom: 30px;
+}
+
+#captcha{
+	width: 228px;
+	height: 58.5px;
+	margin-bottom: -9px;
+	margin-right: -5px;
+	border: 2px solid black;
+	border-bottom: 0px;
+	border-right: 0px;
+}
