@@ -3,11 +3,11 @@
 
 	function connectFalaDB(){
 			try{
-		
-			$connect = new PDO( 
-				"mysql:host=".DBHOST.";port=".DBPORT.";dbname=".DBNAME,DBUSER,
+
+			$connect = new PDO(
+				"psql:host=".DBHOST.";port=".DBPORT.";dbname=".DBNAME,DBUSER,
 				DBPWD );
-		}catch(Exception $e){
+		}catch(PDOException $e){
 			die("Erreur au niveau de la base de données ".$e->getMessage());
 		}
 		return $connect;
@@ -15,7 +15,7 @@
 
 	function emailExist($connect, $email){
 
-		$queryPrepared = $connect->prepare( 
+		$queryPrepared = $connect->prepare(
 			"SELECT ID_USERS FROM USERS WHERE EMAIL = :email" );
 
 		$queryPrepared->execute(["email"=>$email]);
@@ -26,7 +26,7 @@
 
 	function pseudoExist($connect, $userName){
 
-		$queryPrepared = $connect->prepare( 
+		$queryPrepared = $connect->prepare(
 			"SELECT ID_USERS FROM USERS WHERE PSEUDO = :userName" );
 
 		$queryPrepared->execute(["userName"=>$userName]);
