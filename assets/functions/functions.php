@@ -5,8 +5,7 @@
 			try{
 
 			$connect = new PDO(
-				"psql:host=".DBHOST.";port=".DBPORT.";dbname=".DBNAME,DBUSER,
-				DBPWD );
+				"pgsql:host=".DBHOST.";port=".DBPORT.";dbname=".DBNAME,DBUSER,DBPWD );
 		}catch(PDOException $e){
 			die("Erreur au niveau de la base de données ".$e->getMessage());
 		}
