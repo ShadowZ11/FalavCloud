@@ -26,17 +26,12 @@
 					<div class="nameBloc" >A LA UNE</div>
 					<div class="barBloc1" id="nameBlocALaUne"></div>
 				</div>
-				<a href="News.php?ID_NEWS=<?php echo $news[0]["ID_NEWS"];?>">
+				<a href="News.php?ID_NEWS=<?php echo $news[0]["id_news"];?>">
 					<div class="titleBigauthorDateNews">
 						<div>
-							<div id="titleBigNews"><?php echo $news[0]["TITRE"];?></div>
+							<div id="titleBigNews"><?php echo $news[0]["titre"];?></div>
 							<div class="authorDateNews">
-								<?php
-									$sqlAuthNews = $connect->query("SELECT nom, prenom FROM users WHERE id_user = '".$news[0]['id_users']."'");
-									$authNews = $sqlAuthNews->fetch();
-								?>
-								<div >Par <?php echo $authNews['PRENOM'].'&nbsp;'. $authNews['NOM'];?></div>&nbsp;<div class="DateNews">| <?php echo $news[0]["DATE_NEWS"];?></div>
-							</div>
+								</div>
 							<div id="headBigNews">
 							</div>
 						</div>
