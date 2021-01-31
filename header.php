@@ -1,13 +1,3 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175170986-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-175170986-1');
-</script>
-<script data-ad-client="ca-pub-3008414481804558" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <header>
 	<div id="header">
 		<div id="header1">
@@ -40,8 +30,8 @@
 											$prenom = strtoupper($_SESSION["prenom"]);
 											echo $prenom;
 										}
-										
-									?> &nbsp;	
+
+									?> &nbsp;
 								</div>
 								<img id="popUserPP" src="<?php echo $_SESSION["userPic"]; ?>">
 							</a>
@@ -56,7 +46,7 @@
 					</div>
 				<?php
 				}else{
-				?>					
+				?>
 					<div id="LoginSignin">
 						<a id="headerLogin" href="Login.php">LOG IN</a>
 						|
@@ -77,23 +67,21 @@
 			</ul>
 		</div>
 	</div>
-	<?php 
+	<?php
 		if (isset($_SESSION["rang"]) && $_SESSION["rang"] == 3 ) {
 	?>
 		<div id="adminHeader">
 			<a  href="usersManager.php"><img class="iconHeaderAdmin" src="https://img.icons8.com/ios-glyphs/30/000000/group.png" alt="gestion d'uilisateur" /></a>
 			<a href="addNews.php"><img class="iconHeaderAdmin" src="https://img.icons8.com/ios-glyphs/26/000000/pencil.png" alt="éditer"/></a>
-			<?php 
-				if (isset($_GET['ID_NEWS']) || isset($_GET['ID_MUSIQUE']) || isset($_GET['ID_ALBUM'])) {	
+			<?php
+				if (isset($_GET['ID_NEWS']) || isset($_GET['ID_MUSIQUE']) || isset($_GET['ID_ALBUM'])) {
 			?>
 				<a href="assets/functions/deletePage.php?<?php echo ( isset($_GET['ID_NEWS']))?'ID_NEWS='.$_GET['ID_NEWS'].'':""; echo ( isset($_GET['ID_MUSIQUE']))?'ID_MUSIQUE='.$_GET['ID_MUSIQUE'].'':""; echo ( isset($_GET['ID_ALBUM']))?'ID_ALBUM='.$_GET['ID_ALBUM'].'':"";?>"><img class="iconHeaderAdmin" src="https://img.icons8.com/ios-glyphs/30/000000/delete-forever.png" alt="supprimer la page'"/></a>
 			<?php
 				}
 			?>
 		</div>
-	<?php 
+	<?php
 		}
 	?>
 </header>
-
-	
