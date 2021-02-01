@@ -4,7 +4,7 @@ function showMoreTracks(){
 	let numb = button.value;
 
 	const show = new XMLHttpRequest();
-	show.open('POST', 'assets/functions/loadBehindTrack.php');
+	show.open('post', 'assets/functions/loadBehindTrack.php');
 
 	show.onreadystatechange = function(){
 		if (show.readyState === 4) {
@@ -12,7 +12,7 @@ function showMoreTracks(){
 		}
 	};
 	show.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	let body = 'VERSION=' + numb;
+	let body = 'version=' + numb;
 	show.send(body);
 }
 
@@ -22,7 +22,7 @@ function showMoreAlbums(){
 	let numb = button.value;
 
 	const show = new XMLHttpRequest();
-	show.open('POST', 'assets/functions/loadBehindAlbum.php');
+	show.open('post', 'assets/functions/loadBehindAlbum.php');
 
 	show.onreadystatechange = function(){
 		if (show.readyState === 4) {
@@ -30,7 +30,7 @@ function showMoreAlbums(){
 		}
 	};
 	show.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	let body = 'VERSION=' + numb;
+	let body = 'version=' + numb;
 	show.send(body);
 }
 
@@ -40,7 +40,7 @@ function showMoreNews(){
 	let numb = button.value;
 
 	const show = new XMLHttpRequest();
-	show.open('POST', 'assets/functions/loadBehindNews.php');
+	show.open('post', 'assets/functions/loadBehindNews.php');
 
 	show.onreadystatechange = function(){
 		if (show.readyState === 4) {
@@ -48,7 +48,7 @@ function showMoreNews(){
 		}
 	};
 	show.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	let body = 'VERSION=' + numb;
+	let body = 'version=' + numb;
 	show.send(body);
 }
 
@@ -58,7 +58,7 @@ function showMoreArtistesL(){
 	let numb = button.value;
 
 	const show = new XMLHttpRequest();
-	show.open('POST', 'assets/functions/loadBehindArtistesL.php');
+	show.open('post', 'assets/functions/loadBehindArtistesL.php');
 
 	show.onreadystatechange = function(){
 		if (show.readyState === 4) {
@@ -66,7 +66,7 @@ function showMoreArtistesL(){
 		}
 	};
 	show.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	let body = 'VERSION=' + numb;
+	let body = 'version=' + numb;
 	show.send(body);
 }
 
@@ -76,7 +76,7 @@ function showMoreArtistesR(){
 	let numb = button.value;
 
 	const show = new XMLHttpRequest();
-	show.open('POST', 'assets/functions/loadBehindArtistesR.php');
+	show.open('post', 'assets/functions/loadBehindArtistesR.php');
 
 	show.onreadystatechange = function(){
 		if (show.readyState === 4) {
@@ -84,6 +84,6 @@ function showMoreArtistesR(){
 		}
 	};
 	show.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	let body = 'VERSION=' + numb;
+	let body = 'version=' + numb;
 	show.send(body);
 }
