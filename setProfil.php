@@ -1,17 +1,17 @@
 <?php
 	session_start();
 	require("assets/functions/accountInfos.php");
-	if ($_GET['ID_USERS'] == $_SESSION['id']) {
+	if ($_GET['id_users'] == $_SESSION['id']) {
 ?>
 	<!DOCTYPE html>
 	<html>
 	<head>
 		<meta charset="UTF-8">
 		<title>FALA - <?php
-						if (isset($infoUSER["PSEUDO"])) {
-							echo $infoUSER["PSEUDO"];
+						if (isset($infoUSER["pseudo"])) {
+							echo $infoUSER["pseudo"];
 						}else{
-							echo $infoUSER["PRENOM"]." ".$infoUSER["NOM"];
+							echo $infoUSER["prenom"]." ".$infoUSER["nom"];
 						}
 						?>
 		</title>
@@ -26,19 +26,19 @@
 			require("header.php"); 
 		?>
 
-		<div id="headPersoPageBackGround" style="background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.7)),url('<?php echo $infoUSER["PHOTO"]?>');background-size: cover;">
+		<div id="headPersoPageBackGround" style="background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.7)),url('<?php echo $infoUSER["photo"]?>');background-size: cover;">
 			<div class="headAccountPage">
 				
 				<div class="menuheadPersoPage1">
 					<div class="photoUserNameVerifySettings">
 						<div class="photoUserNameVerify">
-							<img class="userPic" src="<?php echo $infoUSER["PHOTO"]?>" width="250px" height="250px">
+							<img class="userPic" src="<?php echo $infoUSER["photo"]?>" width="250px" height="250px">
 							<div class="actualArtist">
 								<?php
-									if (!empty($infoUSER["PSEUDO"])) {
-									 	echo $infoUSER["PSEUDO"];
+									if (!empty($infoUSER["pseudo"])) {
+									 	echo $infoUSER["pseudo"];
 									 }else{
-									 	echo $infoUSER["PRENOM"]." ".$infoUSER["NOM"];
+									 	echo $infoUSER["prenom"]." ".$infoUSER["nom"];
 									 }
 									if ($infoUSER["VF"] == 1) {
 										?>
@@ -80,11 +80,11 @@
 						<p>
 							<div class="l-input">
 								<span class="input-2">
-									<label >Email</label>
+									<label >email</label>
 									<p>
 										<b>
 											<?php
-												echo $infoUSER["EMAIL"]
+												echo $infoUSER["email"]
 											?>
 										</b>
 									</p>
@@ -94,7 +94,7 @@
 									<p>
 										<b>
 											<?php
-												echo $infoUSER["DATE_INSCRIPTION"]
+												echo $infoUSER["date_inscription"]
 											?>
 										</b>
 									</p>
@@ -113,17 +113,17 @@
 									<p>
 										<b>
 											<?php
-												echo $infoUSER["PRENOM"]
+												echo $infoUSER["prenom"]
 											?>
 										</b>
 									</p>
 								</span>	
 								<span class="input-3">
-									<label >Nom</label>
+									<label >nom</label>
 									<p>
 										<b>
 											<?php
-												echo $infoUSER["NOM"]
+												echo $infoUSER["nom"]
 											?>
 										</b>
 									</p>
@@ -142,8 +142,8 @@
 						</p>
 						<div class="l-input">
 							<span class="input-2">
-								<label for="userName">Nom d'utilisateur</label>
-								<input class="input" type="text" id="userName" name="userName"<?php if (!empty($infoUSER["PSEUDO"])) {echo "value='".$infoUSER["PSEUDO"]."'";}else{echo "placeholder='Pseudo'";
+								<label for="userName">nom d'utilisateur</label>
+								<input class="input" type="text" id="userName" name="userName"<?php if (!empty($infoUSER["pseudo"])) {echo "value='".$infoUSER["pseudo"]."'";}else{echo "placeholder='pseudo'";
 							}
 							?>>
 							<?php
@@ -151,7 +151,7 @@
 								?>
 									<p style="color: rgb(210, 69, 52); font-size: 13px; margin-bottom: 32px; margin-top: -28px;">
 									<img src="assets/icons/errorForm.png">
-									Nom d'utilisateur incorrect
+									nom d'utilisateur incorrect
 									</p>
 
 								<?php
@@ -172,14 +172,14 @@
 								?>
 							</span>
 							<span class="input-2">
-								<label for="userPic">Photo de profil</label>
+								<label for="userPic">photo de profil</label>
 								<input class="input" type="file" id="userPic" name="userPic" placeholder="Auteur de l'album" >
 								<?php
 									if (isset($_COOKIE["error"])) {
 								?>
 									<p style="color: rgb(210, 69, 52); font-size: 13px; margin-bottom: 32px; margin-top: -28px;">
 										<img src="assets/icons/errorForm.png">
-										Photo de profil pas au bon format
+										photo de profil pas au bon format
 									</p>
 
 								<?php
@@ -191,7 +191,7 @@
 								?>
 									<p style="color: rgb(210, 69, 52); font-size: 13px; margin-bottom: 32px; margin-top: -28px;">
 									<img src="assets/icons/errorForm.png">
-									Photo de profil pas au bon format
+									photo de profil pas au bon format
 									</p>
 
 								<?php
@@ -200,14 +200,14 @@
 								?>
 							</span>
 						</div>
-						<label class="check">&nbsp;Adresse Email public
-			  				<input type="checkbox" name="publicEmail">
+						<label class="check">&nbsp;Adresse email public
+			  				<input type="checkbox" name="publicemail">
 			  				<span class="checkmark"></span>
 			  			</label>
 						<label for="userBio">Bio</label>
 						<textarea class="inputLong" type="text" id="userBio" rows="4" name="userBio"><?php 
-						if (!empty($infoUSER["BIO"])) {
-							echo $infoUSER["BIO"];
+						if (!empty($infoUSER["bio"])) {
+							echo $infoUSER["bio"];
 						}
 						?></textarea>
 						<?php
@@ -238,5 +238,5 @@
 	</html>
 	<?php
 	}else{
-		header("location:account1.php?ID_USERS=".$_GET['ID_USERS']);
+		header("location:account1.php?id_users=".$_GET['id_users']);
 	}

@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title><?php echo $infoNews['TITRE'];?></title>
+		<title><?php echo $infoNews['titre'];?></title>
 		<link rel="stylesheet" href="assets/styles/index.css">
 		<link href="assets/fonts/Storybook.ttf" rel="stylesheet" as="font" type="font/Storybook">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -20,9 +20,9 @@
 			require("header.php"); 
 		?>
 		
-		<div id="titleBigNewsPage"><?php echo $infoNews['TITRE'];?></div>	
+		<div id="titleBigNewsPage"><?php echo $infoNews['titre'];?></div>	
 		<div class="authorDateNewsPage">
-			<div >Par <?php echo $authNews['PRENOM'].'&nbsp;'.$authNews['NOM'];?></div>&nbsp;<div class="DateNews">| <?php echo $infoNews['DATE_NEWS'];?></div>
+			<div >Par <?php echo $authNews['prenom'].'&nbsp;'.$authNews['nom'];?></div>&nbsp;<div class="DateNews">| <?php echo $infoNews['date_news'];?></div>
 		</div>
 		<div class="imgBarNewsPage">
 			<div class="barNews"></div>
@@ -33,10 +33,10 @@
 		<div class="contentNewsPage">
             <div id="realContentNews">
                 <p>
-                    <?php echo $infoNews['PREVIEW'];?>
+                    <?php echo $infoNews['preview'];?>
                 </p>
                 <p>
-                    <?php echo $infoNews['CONTENU'];?>
+                    <?php echo $infoNews['contenu'];?>
                 </p>
             </div>
 			<div class="comment">
@@ -61,30 +61,30 @@
 				</div>
 				<div class="commentContent">
 					<?php	
-						for ($i = 0; isset($infoComment[$i]['ID']) && !empty($infoComment[$i]['ID']); $i++) {
-							$sqlInfoOneComment = $connect->query("SELECT COMMENTAIRE, ID_USERS FROM COMMENTAIRES WHERE ID ='".$infoComment[$i]['ID']."'");
+						for ($i = 0; isset($infoComment[$i]['id']) && !empty($infoComment[$i]['id']); $i++) {
+							$sqlInfoOneComment = $connect->query("SELECT commentaire, id_users FROM commentaires WHERE id ='".$infoComment[$i]['id']."'");
 							$infoOneComment = $sqlInfoOneComment->fetch();
-							$sqlInfoOneCommentUser = $connect->query("SELECT PSEUDO, NOM, PRENOM, PHOTO FROM USERS WHERE ID_USERS ='".$infoOneComment["ID_USERS"]."'");
+							$sqlInfoOneCommentUser = $connect->query("SELECT pseudo, nom, prenom, photo FROM users WHERE id_users ='".$infoOneComment["id_users"]."'");
 							$usersComment = $sqlInfoOneCommentUser->fetch();
 						?>
 							<hr>
 							<div class="oneComment">
-								<a href="account1.php?ID_USERS=<?php echo $infoOneComment['ID_USERS'];?>">
+								<a href="account1.php?id_users=<?php echo $infoOneComment['id_users'];?>">
 									<div class="ProfilComment">
-										<img class="userPic" src="<?php echo $usersComment["PHOTO"];?>" width="35px" height="35px">
+										<img class="userPic" src="<?php echo $usersComment["photo"];?>" width="35px" height="35px">
 										<div class="userInComment">
 											<?php
-												if (!empty($usersComment["PSEUDO"])) {
-													echo $usersComment["PSEUDO"];
+												if (!empty($usersComment["pseudo"])) {
+													echo $usersComment["pseudo"];
 												}else{
-													echo $usersComment["PRENOM"]." ".$usersComment["NOM"];
+													echo $usersComment["prenom"]." ".$usersComment["nom"];
 												}
 											?>
 										</div>	
 									</div>
 								</a>
 								<div class="commentValue">
-									<?php echo $infoOneComment["COMMENTAIRE"];?>
+									<?php echo $infoOneComment["commentaire"];?>
 								</div>
 							</div>
 						<?php						

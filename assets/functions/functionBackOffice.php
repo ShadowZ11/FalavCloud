@@ -20,7 +20,7 @@ function selectAllUsers()
 {
 	$connect = connectFalaDB();
 
-	$sqlUsers = $connect->query("SELECT * FROM USERS");
+	$sqlUsers = $connect->query("SELECT * FROM users");
 	$users = $sqlUsers->fetchAll();
 
 	$_SESSION['users'] = $users;
@@ -29,13 +29,13 @@ function selectAllUsers()
 function showAllUsers()
 {
 	$i = 0;
-	while (isset($_SESSION['users'][$i]["EMAIL"]) && isset($_SESSION['users'][$i]["PRENOM"])) {
+	while (isset($_SESSION['users'][$i]["email"]) && isset($_SESSION['users'][$i]["prenom"])) {
 ?>
 		<tr calss="oneUser">
-			<td><?php echo ($_SESSION['users'][$i]['PSEUDO']); ?></td>
-			<td><?php echo ($_SESSION['users'][$i]['PRENOM']); ?></td>
-			<td><?php echo ($_SESSION['users'][$i]['EMAIL']); ?></td>
-			<td><?php echo ($_SESSION['users'][$i]['DATE_INSCRIPTION']); ?></td>
+			<td><?php echo ($_SESSION['users'][$i]['pseudo']); ?></td>
+			<td><?php echo ($_SESSION['users'][$i]['prenom']); ?></td>
+			<td><?php echo ($_SESSION['users'][$i]['email']); ?></td>
+			<td><?php echo ($_SESSION['users'][$i]['date_inscription']); ?></td>
 			<td>
 				<select name="<?php echo $i ?>-verifier">
 					<option value="1" <?php setIsSelected($i, "1", "VF"); ?>>Oui</option>

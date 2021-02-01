@@ -6,16 +6,16 @@
 			
 		$connect = connectFalaDB();
 
-		$sqlPost = $connect->prepare("INSERT INTO POST(CONTENUE_POST, DATE_CREATION_POST, ID_USERS ) VALUES (:post ,CURRENT_TIMESTAMP , '".$_SESSION["id"]."')");
+		$sqlPost = $connect->prepare("INSERT INTO post(contenue_post, date_creation_post, id_users ) VALUES (:post ,CURRENT_TIMESTAMP , '".$_SESSION["id"]."')");
 
 		$arrayWithValues = [ 
 						"post"=>$_POST["post"]
 						];
 		$sqlPost->execute($arrayWithValues) or die(print_r($sqlPost->errorInfo(), TRUE));
 
-		header("location:../../account1.php?ID_USERS=".$_SESSION['id']);
+		header("location:../../account1.php?id_users=".$_SESSION['id']);
 	}else{
-		header("location:../../account1.php?ID_USERS=".$_SESSION['id']);
+		header("location:../../account1.php?id_users=".$_SESSION['id']);
 	}
 	
 		

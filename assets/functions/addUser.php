@@ -98,7 +98,7 @@ if( count($_POST) == 9
 
 	}else{
 
-		$queryPrepared =  $connect->prepare( "INSERT INTO USERS 
+		$queryPrepared =  $connect->prepare( "INSERT INTO users 
 		(nom, prenom, email, password, date_inscription, date_naissance, photo, rang) 
 		VALUES 
 		( :nom, :prenom, :email , :pwd, CURRENT_TIMESTAMP, :dateDeNaissance, 'assets/img/accounts/picAcount/defaultUser.png', 1);" );

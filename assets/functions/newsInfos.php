@@ -1,14 +1,14 @@
 <?php
 	require_once("functions.php");
 
-	if ( !empty($_GET["ID_NEWS"])) {
+	if ( !empty($_GET["id_news"])) {
 			
 		$connect = connectFalaDB();
 
-		$sqlInfoNews = $connect->query("SELECT DATE_NEWS, TITRE, PREVIEW, PHOTO_PREVIEW, CONTENU, ID_USERS FROM NEWS WHERE ID_NEWS ='".$_GET["ID_NEWS"]."'");
+		$sqlInfoNews = $connect->query("SELECT date_news, titre, preview, photo_preview, contenu, id_users FROM news WHERE id_news ='".$_GET["id_news"]."'");
 		$infoNews = $sqlInfoNews->fetch();
 
-		$sqlAuthNews = $connect->query("SELECT NOM, PRENOM FROM USERS WHERE ID_USERS ='".$infoNews["ID_USERS"]."'");
+		$sqlAuthNews = $connect->query("SELECT nom, prenom FROM users WHERE id_users ='".$infoNews["id_users"]."'");
 		$authNews = $sqlAuthNews->fetch();
 							
 	}else{

@@ -82,7 +82,7 @@
 			<?php 
 				if (isset($_GET['id_news'])) {	
 			?>
-				<a href="assets/functions/deletePage.php?<?php echo ( isset($_GET['ID_NEWS']))?'ID_NEWS='.$_GET['ID_NEWS'].'':"";?>"><img class="iconHeaderAdmin" src="https://img.icons8.com/ios-glyphs/30/000000/delete-forever.png" alt="supprimer la page'"/></a>
+				<a href="assets/functions/deletePage.php?<?php echo ( isset($_GET['id_news']))?'id_news='.$_GET['id_news'].'':"";?>"><img class="iconHeaderAdmin" src="https://img.icons8.com/ios-glyphs/30/000000/delete-forever.png" alt="supprimer la page'"/></a>
 			<?php
 				}
 			?>

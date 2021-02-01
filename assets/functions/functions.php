@@ -15,7 +15,7 @@
 	function emailExist($connect, $email){
 
 		$queryPrepared = $connect->prepare(
-			"SELECT ID_USERS FROM USERS WHERE EMAIL = :email" );
+			"SELECT id_users FROM users WHERE email = :email" );
 
 		$queryPrepared->execute(["email"=>$email]);
 		$result = $queryPrepared->fetch();
@@ -26,7 +26,7 @@
 	function pseudoExist($connect, $userName){
 
 		$queryPrepared = $connect->prepare(
-			"SELECT ID_USERS FROM USERS WHERE PSEUDO = :userName" );
+			"SELECT id_users FROM users WHERE pseudo = :userName" );
 
 		$queryPrepared->execute(["userName"=>$userName]);
 		$result = $queryPrepared->fetch();

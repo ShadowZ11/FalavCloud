@@ -10,23 +10,23 @@
 
 		$connect = connectFalaDB();
 
-			$queryPrepared = $connect->prepare("SELECT PASSWORD, ID_USERS, PRENOM, PSEUDO, PHOTO, RANG FROM USERS WHERE EMAIL = :email");
+			$queryPrepared = $connect->prepare("SELECT password, id_users, prenom, pseudo, photo, rang FROM users WHERE email = :email");
 
 			$queryPrepared->execute(["email"=>$_POST["email"]]);
 
 			$result = $queryPrepared->fetch();
 
-			$pwdHashed = $result["PASSWORD"];
+			$pwdHashed = $result["password"];
 
 		if (password_verify($_POST["password"], $pwdHashed)){
 			
-			$_SESSION["token"] = createToken($_POST["email"], $result["ID_USERS"]);
+			$_SESSION["token"] = createToken($_POST["email"], $result["id_users"]);
 			$_SESSION["email"] = $_POST["email"];
-			$_SESSION["rang"] = $result["RANG"];
-			$_SESSION["id"] = $result["ID_USERS"];
-			$_SESSION["userPic"] = $result["PHOTO"];
-			$_SESSION["prenom"] = $result["PRENOM"];
-			$_SESSION["userName"] = $result["PSEUDO"];
+			$_SESSION["rang"] = $result["rang"];
+			$_SESSION["id"] = $result["id_users"];
+			$_SESSION["userPic"] = $result["photo"];
+			$_SESSION["prenom"] = $result["prenom"];
+			$_SESSION["userName"] = $result["pseudo"];
 			header("location:../../index.php");
 		}else{
 			echo "L'adresse email ou le mot de passe renseigné n'est pas correct";

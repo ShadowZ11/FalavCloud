@@ -34,7 +34,7 @@
 
 
 
-						$prep =  $connect->prepare("INSERT INTO NEWS 
+						$prep =  $connect->prepare("INSERT INTO news 
 						(date_news, titre, preview, photo_preview, contenu, tag, id_users) 
 						VALUES 
 						( CURRENT_TIMESTAMP, :titre, :preview, 'assets/img/news/".$_POST["newsTitle"]."-".$_SESSION["email"].".".$extensionUpload."', :contenu, :tag, '".$_SESSION["id"]."');");

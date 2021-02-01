@@ -25,7 +25,6 @@
 			<div id="navFooter">
 				<a class="aWhite" href="aboutFala.php">About FALA</a>
 				<a class="aWhite" href="contactUs.php">Contact us</a>
-				<a class="aWhite" href="developers.php">Developers</a>
 				<a class="aWhite" href="cgu.php">CGU</a>
 			</div>
 		</div>
