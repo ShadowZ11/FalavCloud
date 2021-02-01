@@ -26,7 +26,7 @@
 					<div class="nameBloc" >A LA UNE</div>
 					<div class="barBloc1" id="nameBlocALaUne"></div>
 				</div>
-				<a href="News.php?ID_NEWS=<?php echo $news[0]["id_news"];?>">
+				<a href="News.php?id_news=<?php echo $news[0]["id_news"];?>">
 					<div class="titleBigauthorDateNews">
 						<div>
 							<div id="titleBigNews"><?php echo $news[0]["titre"];?></div>
