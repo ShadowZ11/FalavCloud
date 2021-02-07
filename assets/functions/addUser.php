@@ -113,9 +113,26 @@ if( count($_POST) == 8
 
 		$queryPrepared->execute($arrayWithValues);
 
-		
+		$mail = curl_init($_ENV['TRUSTIFI_URL'].'/api/i/v1/email');
+        curl_setopt_array($mail, array(CURLOPT_CUSTOMREQUEST => "POST",CURLOPT_POSTFIELDS =>"{\n  \"template\": {\n  \t\"name\": \"Mail_de_bienvenue\",\n  \t\"fields\": {\n  \t\t\"first_field\": \"Subject\",\n  \t\t\"second_field\": \"Message\"\n  \t}\n  },\n  \"recipients\": [{\"email\": ".$_POST["email"].", \"name\": ".$_POST["nom"]."}],\n \"methods\": {\"secureSend\": true}", CURLOPT_HTTPHEADER => array(
 
-		header("Location:../../validation.php");
+        	"x-trustifi-key: ".$_ENV['TRUSTIFI_KEY'],
+        	"x-trustifi-secret:".$_ENV['TRUSTIFI_SECRET'],
+        	"Content-Type: application/json"
+	        ),
+	    ));
+	        
+	    $response = curl_exec($mail);
+	    $error = curl_error($mail);
+	    if ($error) {
+	        echo "une erreur s'est produite lors de l'envoi de votre mail de bienvenue: ".$error;
+	    }else{
+
+			header("Location:../../validation.php");
+		}
+
+		curl_close($mail);
+		
 	}
 
 
@@ -127,17 +144,4 @@ if( count($_POST) == 8
 
 
 
-$mail = curl_init($_ENV['TRUSTIFI_URL'].'/api/i/v1/email');
-        curl_setopt_array($mail, array(CURLOPT_CUSTOMREQUEST => "POST",CURLOPT_POSTFIELDS =>"{\n  "template": {\n  \t"name": "Mail_de_bienvenue",\n  \t"fields": {\n  \t\t"first_field": "Subject",\n  \t\t"second_field": "Message"\n  \t}\n  },\n  "recipients": [{"email": ".$_POST["email"].", "name": ".$_POST["nom"]."}],\n "methods": {"secureSend": true}", CURLOPT_HTTPHEADER => array(
-
-        	"x-trustifi-key: ".$_ENV['TRUSTIFI_KEY'],
-        	"x-trustifi-secret:".$_ENV['TRUSTIFI_SECRET'],
-        	"Content-Type: application/json"
-        ),
-    ));
-        $response = curl_exec($mail);
-        $error = curl_error($mail);
-        if ($error) {
-            echo "une erreur s'est produite lors de l'envoi de votre mail de bienvenue: ".$error;
-        }else{
 
