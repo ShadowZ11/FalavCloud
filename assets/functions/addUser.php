@@ -94,9 +94,9 @@ if( count($_POST) == 8
 	}else{
 
 		$queryPrepared =  $connect->prepare( "INSERT INTO users 
-		(nom, prenom, email, password, date_inscription, date_naissance, photo, rang) 
+		(nom, prenom, email, password, date_naissance, photo, rang) 
 		VALUES 
-		( :nom, :prenom, :email , :pwd, CURRENT_TIMESTAMP, :dateDeNaissance, 'assets/img/accounts/picAcount/defaultUser.png', 1);" );
+		( :nom, :prenom, :email , :pwd, :dateDeNaissance, 'assets/img/accounts/picAcount/defaultUser.png', 1);" );
 
 
 		$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
