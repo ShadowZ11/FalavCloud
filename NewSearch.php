@@ -61,7 +61,7 @@
 								<div class="authorDateNewsApercu">
 									<div >Par <?php echo $autNewsResult["prenom"]."&nbsp;".$autNewsResult["nom"]; ?></div>&nbsp;<div class="DateNews">| <?php echo $infoNewsResult["date_news"]; ?></div>
 								</div>
-								<div></div>
+								<img class="imgNewsApercu" width="100%" src="<?php echo $infoNewsResult['photo_preview']; ?>">
 							</div>
 						</div>
 					</a>
