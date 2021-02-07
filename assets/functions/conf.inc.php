@@ -7,3 +7,6 @@
 	define("DBPORT", "5432");
 
 	define("SALT", "kal25gghfq");
+
+
+	define("PASSWORD_DEFAULT", "sfegtrge");
