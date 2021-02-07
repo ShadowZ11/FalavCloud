@@ -79,23 +79,6 @@
 	  				<span class="checkmark"></span>
 				</label>
 			</div>
-			<div>
-				<img id="captcha" src="assets/functions/captcha.php" alt="Image de captcha">
-		        <button class="buttonSquare" type="button" value="recharger le captcha" id="reload">
-		        	<img width="45" src="assets/icons/refreshIcon.png">
-		        </button><br>
-		        <input class="inputCaptcha" type="text" required="required" name="captcha" placeholder="Veuillez saisir le captcha" id="Cptcha">
-		         <p>
-		        	<?php
-		        	if (isset($_COOKIE["captcha"])) {
-		        		$capt = $_COOKIE["captcha"];
-		        			echo $capt;
-		        		
-		        		setcookie("captcha", false);
-		        	}
-		        	?>
-		        </p>
-		    </div>
 			<div id="link">Déjà inscrit? <a href="Login.php"><b>Connectez-vous.</b></a></div>
 			<input type="submit" value="S'inscrire" class="valideButton">
 		</form>
