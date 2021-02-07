@@ -8,5 +8,4 @@
 
 	define("SALT", "kal25gghfq");
 
-
-	define("PASSWORD_DEFAULT", "sfegtrge");
+	

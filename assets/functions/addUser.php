@@ -99,7 +99,8 @@ if( count($_POST) == 8
 		( :nom, :prenom, :email , :pwd, :dateDeNaissance, 'assets/img/accounts/picAcount/defaultUser.png', 1);" );
 
 
-		$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
+		//$pwd = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
+		$pwd = $_POST["pwd"];
 
 		$arrayWithValues = [ 
 						"nom"=>$_POST["nom"], 
