@@ -83,13 +83,6 @@
 			<input type="submit" value="S'inscrire" class="valideButton">
 		</form>
 		<script src="assets/functions/Javascript/signIn.js" charset="utf-8"></script>
-		<script>
-			$(function(){
-				$('#reload').click(function(){
-					$('#captcha').attr('src', 'assets/functions/captcha.php?' + (new Date).getTime());
-				 	});
-				});
-		</script>
 	</body>
 	
 </html>
