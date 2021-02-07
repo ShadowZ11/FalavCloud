@@ -26,7 +26,7 @@
 		</div>
 		<div class="imgBarNewsPage">
 			<div class="barNews"></div>
-			<img class="imgNewsPage" src="<?php echo $infoNews['PHOTO_PREVIEW'];?>">
+			<img class="imgNewsPage" src="<?php echo $infoNews['Photo_preview'];?>">
 			<div class="barNews"></div>
 		</div>
 

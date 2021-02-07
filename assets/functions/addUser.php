@@ -12,8 +12,7 @@ if( count($_POST) == 9
 	&& !empty($_POST["cEmail"]) 
 	&& !empty($_POST["pwd"]) 
 	&& !empty($_POST["cPwd"]) 
-	&& !empty($_POST["cgu"])
-	&& !empty($_POST["captcha"])){
+	&& !empty($_POST["cgu"])){
 
 	$connect = connectFalaDB();
 
@@ -80,10 +79,6 @@ if( count($_POST) == 9
 		$listOfErrors[] = "Vous devez avoir au moins 13 ans";
 	}
 
-	if( $_POST["captcha"] != $_SESSION["captcha"]){
-		$error = true;
-		$listOfErrors[] = "Le captcha est invalide";
-	}
 
 	
 	if($error == true){
