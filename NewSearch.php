@@ -57,11 +57,11 @@
 								<div class="emptyTitre2">+</div>
 								<div class="titreNewsApercu"><?php echo $infoNewsResult["titre"]; ?></div>
 							</div>
-						<div class="authorDateImgNewsApercu">
-							<div class="authorDateNewsApercu">
-								<div >Par <?php echo $autNewsResult["prenom"]."&nbsp;".$autNewsResult["nom"]; ?></div>&nbsp;<div class="DateNews">| <?php echo $infoNewsResult["date_news"]; ?></div>
+							<div class="authorDateImgNewsApercu">
+								<div class="authorDateNewsApercu">
+									<div >Par <?php echo $autNewsResult["prenom"]."&nbsp;".$autNewsResult["nom"]; ?></div>&nbsp;<div class="DateNews">| <?php echo $infoNewsResult["date_news"]; ?></div>
 								</div>
-							
+								<div></div>
 							</div>
 						</div>
 					</a>
