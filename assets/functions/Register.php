@@ -20,13 +20,13 @@
 
 		if (password_verify($_POST["password"], $pwdHashed)){
 			
-			//$_SESSION["token"] = createToken($_POST["email"], $result["id_users"]);
-			//$_SESSION["email"] = $_POST["email"];
-			//$_SESSION["rang"] = $result["rang"];
-			//$_SESSION["id"] = $result["id_users"];
-			//$_SESSION["userPic"] = $result["photo"];
-			//$_SESSION["prenom"] = $result["prenom"];
-			//$_SESSION["userName"] = $result["pseudo"];
+			$_SESSION["token"] = createToken($_POST["email"], $result["id_users"]);
+			$_SESSION["email"] = $_POST["email"];
+			$_SESSION["rang"] = $result["rang"];
+			$_SESSION["id"] = $result["id_users"];
+			$_SESSION["userPic"] = $result["photo"];
+			$_SESSION["prenom"] = $result["prenom"];
+			$_SESSION["userName"] = $result["pseudo"];
 			header("location:../../index.php");
 		}else{
 			echo "L'adresse email ou le mot de passe renseigné n'est pas correct";
