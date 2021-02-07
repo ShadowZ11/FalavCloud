@@ -5,7 +5,6 @@
 
   gtag('config', 'UA-175170986-1');
 </script>
-<script data-ad-client="ca-pub-3008414481804558" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <header>
 	<div id="header">
 		<div id="header1">
