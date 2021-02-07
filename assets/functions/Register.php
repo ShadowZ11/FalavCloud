@@ -10,7 +10,7 @@
 
 		$connect = connectFalaDB();
 
-			$queryPrepared = $connect->prepare("SELECT password, id_users, prenom, pseudo, photo, rang FROM users WHERE email = :email");
+			$queryPrepared = $connect->prepare("SELECT password, id_users, prenom, photo, rang FROM users WHERE email = :email");
 
 			$queryPrepared->execute(["email"=>$_POST["email"]]);
 
