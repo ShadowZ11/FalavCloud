@@ -42,26 +42,26 @@
 				<?php
 					$connect = connectFalaDB();
 
-					$queryPrepared = $connect->query("SELECT id_news,id_users  FROM news ORDER BY date_news DESC");
+					$queryPrepared = $connect->query("SELECT ID_NEWS,ID_USERS  FROM NEWS ORDER BY DATE_NEWS DESC");
 					$resultSearch = $queryPrepared->fetchAll();
 					
-					for ($i=0; isset($resultSearch[$i]['id_news']) >= 15  ; $i++) { 
-						$sqlInfoNewsResult = $connect->query("SELECT titre, photo_preview, date_news, id_users FROM news WHERE id_news ='".$resultSearch[$i]['id_news']."'");
+					for ($i=0; isset($resultSearch[$i]['ID_NEWS']) >= 15  ; $i++) { 
+						$sqlInfoNewsResult = $connect->query("SELECT TITRE, PHOTO_PREVIEW, DATE_NEWS, ID_USERS FROM NEWS WHERE ID_NEWS ='".$resultSearch[$i]['ID_NEWS']."'");
 						$infoNewsResult = $sqlInfoNewsResult->fetch();
-						$sqlAutNewsResult = $connect->query("SELECT prenom, nom FROM users WHERE id_users ='".$resultSearch[$i]['id_users']."'");
+						$sqlAutNewsResult = $connect->query("SELECT PRENOM, NOM FROM USERS WHERE ID_USERS ='".$resultSearch[$i]['ID_USERS']."'");
 						$autNewsResult = $sqlAutNewsResult->fetch();
 				?>
-					<a href="News.php?id_news=<?php echo $resultSearch[$i]['id_news']; ?>">
+					<a href="News.php?ID_NEWS=<?php echo $resultSearch[$i]['ID_NEWS']; ?>">
 						<div class="searchNewsActu">
 							<div>
 								<div class="emptyTitre2">+</div>
-								<div class="titreNewsApercu"><?php echo $infoNewsResult["titre"]; ?></div>
+								<div class="titreNewsApercu"><?php echo $infoNewsResult["TITRE"]; ?></div>
 							</div>
-							<div class="authorDateImgNewsApercu">
-								<div class="authorDateNewsApercu">
-									<div >Par <?php echo $autNewsResult["prenom"]."&nbsp;".$autNewsResult["nom"]; ?></div>&nbsp;<div class="DateNews">| <?php echo $infoNewsResult["date_news"]; ?></div>
+						<div class="authorDateImgNewsApercu">
+							<div class="authorDateNewsApercu">
+								<div >Par <?php echo $autNewsResult["PRENOM"]."&nbsp;".$autNewsResult["NOM"]; ?></div>&nbsp;<div class="DateNews">| <?php echo $infoNewsResult["DATE_NEWS"]; ?></div>
 								</div>
-								<img class="imgNewsApercu" width="100%" src="<?php echo $infoNewsResult['photo_preview']; ?>">
+							<img class="imgNewsApercu" width="100%" src="<?php echo $infoNewsResult['PHOTO_PREVIEW']; ?>">
 							</div>
 						</div>
 					</a>
@@ -70,9 +70,9 @@
 				?>
 			</div>
 			<?php
-			if (isset($resultSearch[$i]['id_news']) && !empty($resultSearch[$i]['id_news'])) {
+			if (isset($resultSearch[$i]['ID_NEWS']) && !empty($resultSearch[$i]['ID_NEWS'])) {
 			?>
-				<button id="newsSearchButton" class="buttonLargeBl" value="16" onclick="showMoreNews()">MORE news</button>
+				<button id="newsSearchButton" class="buttonLargeBl" value="16" onclick="showMoreNews()">MORE NEWS</button>
 				<?php
 			}
 			?>
