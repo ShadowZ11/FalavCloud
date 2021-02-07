@@ -4,7 +4,7 @@
 	require("conf.inc.php");
 	require("functions.php");
 
-if( count($_POST) == 9 
+if( count($_POST) == 8 
 	&& !empty($_POST["nom"])
 	&& !empty($_POST["prenom"]) 
 	&& !empty($_POST["dateDeNaissance"]) 
